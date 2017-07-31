@@ -1,0 +1,23 @@
+{
+  "name": "helloexpress",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config ./public/webpack.config.js --watch",
+    "buildClient": "webpack --config ./public/webpack.config.js",
+    "server": "node ./bin/www",
+    "start": "npm run buildClient && npm run server"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "opn": "^5.1.0",
+    "serve-favicon": "~2.4.2"
+  }
+}
