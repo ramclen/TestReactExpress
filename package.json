@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "mocha --require babel-polyfill --compilers js:babel-register --recursive --watch .\\test ",
     "build": "webpack --config ./public/webpack.config.js --watch",
     "buildClient": "webpack --config ./public/webpack.config.js",
     "server": "node ./bin/www",
@@ -16,8 +17,18 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "jade": "~1.11.0",
+    "mocha": "^3.4.2",
     "morgan": "~1.8.1",
     "opn": "^5.1.0",
     "serve-favicon": "~2.4.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.23.0",
+    "should": "^11.2.1"
   }
 }
