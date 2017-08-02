@@ -1,9 +1,11 @@
 import users from './routes/users/index';
+import artist from './routes/artist/index';
 import index from './routes/index';
 
 const routes = {
     '': index,
     users: users,
+    artist: artist,
 };
 
 const errors ={

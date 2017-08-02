@@ -1,0 +1,45 @@
+html {
+    background-color: #fff;
+    color: #555;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+.username-text {
+    color: #fff;
+    margin-top: 23px;
+}
+
+.artist-card {
+    height: 200px;
+    width: 350px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.artist-card img{
+    height: 200px;
+    width: auto;
+}
+
+.artist-info {
+    padding: 80px 0 0 14%;
+}
+
+.artist-image {
+    height: 200px;
+    width: 30%;
+    display: inline-block;
+    margin-right: 35px;
+    vertical-align: top;
+    margin-top: 30px;
+}
+
+.artist-image img {
+    height: 200px;
+}
+
+.artist-description {
+    display: inline-block;
+    width: 45%;
+}

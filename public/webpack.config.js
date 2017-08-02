@@ -8,6 +8,12 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
+    resolve: {
+        alias:{
+          react:'react'
+        },
+        extensions: ['.js', '.jsx'],
+    },
     module: {
         loaders: [
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
