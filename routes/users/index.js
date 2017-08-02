@@ -1,9 +1,6 @@
 var express = require('express');
+import {ArtistController} from "../artist/index";
 var router = express.Router();
-
-router.get('/:username/artists', function(req, res) {
-    res.json(req.param("username"));
-});
 
 router.get('/', function (req, res, next) {
     var users = new UserController();
@@ -11,6 +8,11 @@ router.get('/', function (req, res, next) {
     if(users.isValidUser(username))
         res.json({id: users.isValidUser(username)})
 });
+
+router.get('/:username/favourites', function(req, res) {
+    var artists = new ArtistController();
+    res.json(artists.getFavourites());
+})
 
 class UserController {
     constructor() {
