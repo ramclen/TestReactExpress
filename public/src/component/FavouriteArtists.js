@@ -14,7 +14,7 @@ export default class FavouriteArtists extends React.Component {
 
     loadInformation(){
         //TODO change to correct username
-        return axios.get('/api/users/ramclen/favourites')
+        return axios.get(`/api/users/${this.props.username||'ramclen'}/favourites`)
             .then(function(response){
                 this.setState({
                     artists: response.data.map(artist=>{

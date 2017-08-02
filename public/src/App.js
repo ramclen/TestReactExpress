@@ -25,7 +25,7 @@ export default class App extends React.Component{
                 <Router>
                     <div>
                         <Route exact path="/" render={()=><LoginUser username={this.state.username} handleUsername={this.handleUsername} />} />
-                        <Route path="/artists" component={FavouriteArtists} />
+                        <Route path="/artists" render={()=><FavouriteArtists username={this.state.username} />} />
                         <Route path="/artist/:id" component={ArtistInformation} />
                     </div>
                 </Router>

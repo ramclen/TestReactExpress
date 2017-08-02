@@ -25791,13 +25791,13 @@ var Artist = function (_React$Component) {
                 { to: "/Artist/" + this.props.artist.id },
                 React.createElement(
                     _Card.Card,
-                    { style: { height: "200px", width: "350px", display: "inline-block", margin: "10px" } },
+                    { className: "artist-card" },
                     React.createElement(
                         _Card.CardMedia,
                         {
                             overlay: React.createElement(_Card.CardTitle, { title: this.props.artist.name, subtitle: "Card subtitle" })
                         },
-                        React.createElement("img", { style: { height: "200px", width: "auto", "max-width": "none" }, src: this.props.artist.image, alt: 'Artist image of ' + this.props.artist.name })
+                        React.createElement("img", { src: this.props.artist.image, alt: 'Artist image of ' + this.props.artist.name })
                     )
                 )
             );
@@ -25945,7 +25945,7 @@ var FavouriteArtists = function (_React$Component) {
         key: "loadInformation",
         value: function loadInformation() {
             //TODO change to correct username
-            return _axios2.default.get('/api/users/ramclen/favourites').then(function (response) {
+            return _axios2.default.get("/api/users/" + (this.props.username || 'ramclen') + "/favourites").then(function (response) {
                 this.setState({
                     artists: response.data.map(function (artist) {
                         return _react2.default.createElement(_Artist2.default, { artist: artist, key: artist.id });
@@ -26161,7 +26161,9 @@ var App = function (_React$Component) {
                         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: function render() {
                                 return _react2.default.createElement(_LoginUser2.default, { username: _this2.state.username, handleUsername: _this2.handleUsername });
                             } }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/artists', component: _FavouriteArtists2.default }),
+                        _react2.default.createElement(_reactRouterDom.Route, { path: '/artists', render: function render() {
+                                return _react2.default.createElement(_FavouriteArtists2.default, { username: _this2.state.username });
+                            } }),
                         _react2.default.createElement(_reactRouterDom.Route, { path: '/artist/:id', component: _ArtistInformation2.default })
                     )
                 )

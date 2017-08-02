@@ -5,9 +5,21 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-.username-text{
-    color:#fff;
-    margin-top:23px;
+.username-text {
+    color: #fff;
+    margin-top: 23px;
+}
+
+.artist-card {
+    height: 200px;
+    width: 350px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.artist-card img{
+    height: 200px;
+    width: auto;
 }
 
 .artist-info {
@@ -23,8 +35,8 @@ html {
     margin-top: 30px;
 }
 
-.artist-image img{
-    height:200px;
+.artist-image img {
+    height: 200px;
 }
 
 .artist-description {
