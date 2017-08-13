@@ -1,13 +1,25 @@
+import {AppContainer} from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from "./App";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
 injectTapEventPlugin();
-ReactDOM.render(
-    <MuiThemeProvider>
-        <App/>
-    </MuiThemeProvider>,
-    document.getElementById('container')
-);
+
+const rootEl = document.getElementById('container');
+
+const render = Component =>
+    ReactDOM.render(
+        <AppContainer>
+            <Component/>
+        </AppContainer>,
+        rootEl
+    );
+
+render(App);
+
+if (module.hot) {
+    module.hot.accept('./App', () => {
+        const NextApp = require('./App').default
+        render(NextApp)
+    })
+}

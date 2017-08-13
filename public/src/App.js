@@ -4,6 +4,7 @@ import FavouriteArtists from "./component/FavouriteArtists";
 import LoginUser from "./component/LoginUser";
 import ArtistInformation from "./component/Artist/ArtistInformation";
 import Navbar from "./component/Navbar";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export default class App extends React.Component{
     constructor(props){
@@ -20,16 +21,18 @@ export default class App extends React.Component{
 
     render(){
         return (
-            <div>
-                <Navbar username={this.state.username}/>
-                <Router>
-                    <div>
-                        <Route exact path="/" render={()=><LoginUser username={this.state.username} handleUsername={this.handleUsername} />} />
-                        <Route path="/artists" render={()=><FavouriteArtists username={this.state.username} />} />
-                        <Route path="/artist/:id" component={ArtistInformation} />
-                    </div>
-                </Router>
-            </div>
+            <MuiThemeProvider>
+                <div>
+                    <Navbar username={this.state.username}/>
+                    <Router>
+                        <div>
+                            <Route exact path="/" render={()=><LoginUser username={this.state.username} handleUsername={this.handleUsername} />} />
+                            <Route path="/artists" render={()=><FavouriteArtists username={this.state.username} />} />
+                            <Route path="/artist/:id" component={ArtistInformation} />
+                        </div>
+                    </Router>
+                </div>
+            </MuiThemeProvider>
         );
     }
 }

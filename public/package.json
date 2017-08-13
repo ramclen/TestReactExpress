@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "Cristopher",
+  "license": "ISC",
   "scripts": {
     "start": "webpack --config webpack.config.js"
   },
-  "author": "Cristopher",
-  "license": "ISC",
+  "babel":{
+    "presets": [ "es2015", "react" ],
+    "plugins": [ "react-hot-loader/babel" ]
+  },
   "dependencies": {
     "axios": "^0.16.2",
+    "babel": "^6.23.0",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "material-ui": "^0.18.7",
@@ -19,10 +27,9 @@
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
     "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.7.2",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-preset-env": "^1.6.0"
+    "write-file-webpack-plugin": "^4.1.0"
   }
 }
